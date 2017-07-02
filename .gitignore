@@ -1,0 +1,22 @@
+# Build Directory
+[Bb]uild/
+
+# Compiled Makefile Outputs
+*.dSYM
+*.gcda
+*.gcno
+*.gcov
+
+# Compiled Object Files
+*.slo
+*.lo
+*.o
+
+# Compiled Dynamic Libraries
+*.so
+*.dylib
+
+# Compiled Static Libraries
+*.lai
+*.la
+*.a
