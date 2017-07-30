@@ -87,12 +87,47 @@ public:
         return this->container[position];
     }
 
-    reference front() {}
-    const_reference front() const {}
-    reference back() {}
-    const_reference back() const {}
-    pointer data() noexcept {}
-    const_pointer data() const noexcept {}
+    /**
+
+     */
+    reference front() {
+        return this->container[0];
+    }
+
+    /**
+
+     */
+    const_reference front() const {
+        return this->container[0];
+    }
+
+    /**
+
+     */
+    reference back() {
+        return this->container[element_count - 1];
+    }
+
+    /**
+
+     */
+    const_reference back() const {
+        return this->container[element_count - 1];
+    }
+
+    /**
+
+     */
+    pointer data() noexcept {
+        return this->container;
+    }
+
+    /**
+
+     */
+    const_pointer data() const noexcept {
+        return this->container;
+    }
 
     /**
 
