@@ -51,5 +51,5 @@ function main() {
         current_column_secondary -= 1;
     }
 
-    console.log(Math.abs(sum_diagonal_primary - sum_column_secondary));
+    console.log(Math.abs(sum_diagonal_primary - sum_diagonal_secondary));
 }
