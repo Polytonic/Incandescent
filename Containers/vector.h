@@ -56,7 +56,13 @@ public:
      ******************/
 
     /**
+        @brief Returns a reference to the element at specified location `position`, with bounds
+               checking. If `position` is not within the range of the container, an exception of
+               type `std::out_of_range` is thrown.
 
+        @note http://en.cppreference.com/w/cpp/container/vector/at
+        @param position the position of the element to return.
+        @return reference to the requested element.
      */
     reference at(size_type position) {
         if (position < this->element_count) {
@@ -66,7 +72,13 @@ public:
     }
 
     /**
+        @brief Returns a reference to the element at specified location `position`, with bounds
+               checking. If `position` is not within the range of the container, an exception of
+               type `std::out_of_range` is thrown.
 
+        @note http://en.cppreference.com/w/cpp/container/vector/at
+        @param position the position of the element to return.
+        @return reference to the requested element.
      */
     const_reference at(size_type position) const {
         if (position < this->element_count) {
