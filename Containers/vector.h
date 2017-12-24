@@ -22,6 +22,7 @@
 #ifndef INCANDESCENT_CONTAINER_VECTOR
 #define INCANDESCENT_CONTAINER_VECTOR
 #pragma once
+#include <limits>
 
 namespace ist {
 
@@ -32,7 +33,7 @@ template <typename T>
 class vector {
 public:
     using value_type = T;
-    using size_type = unsigned long long;
+    using size_type = std::size_t;
     using reference = value_type&;
     using const_reference = const value_type&;
     using pointer = value_type*;
@@ -42,6 +43,7 @@ private:
     size_type element_count = 0;
     size_type container_size = 2 << 3;
     pointer container = new value_type[container_size];
+    size_type reallocation_coefficient = 2;
 
 public:
     vector() = default;
@@ -132,11 +134,32 @@ public:
     /**
 
      */
+    bool empty() const noexcept {
+        return (element_count == 0) ? true : false;
+    }
+
+    /**
+
+     */
+    size_type size() const noexcept {
+        return this->element_count;
+    }
+
+    /**
+
+     */
+    size_type max_size() const noexcept {
+        return std::numeric_limits<size_type>::max();
+    }
+
+    /**
+
+     */
     void push_back(const value_type& value) {
         // Check Whether Insertion Exceeds Available Capacity
         if (this->element_count >= this->container_size) {
             // Allocate a Larger Replacement Container
-            auto expanded_container_size = this->container_size * 2;
+            auto expanded_container_size = this->container_size * reallocation_coefficient;
             auto expanded_container = new value_type[expanded_container_size];
 
             // Copy Existing Elements into Larger Container
@@ -152,13 +175,6 @@ public:
 
         // Insert the Given Element
         this->container[element_count++] = value;
-    }
-
-    /**
-
-     */
-    size_type size() const noexcept {
-        return this->element_count;
     }
 
 };      //~ class vector
