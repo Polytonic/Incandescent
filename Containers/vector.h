@@ -88,42 +88,68 @@ public:
     }
 
     /**
+        @brief Returns a reference to the element at specified location `position`. No bounds
+               checking is performed.
 
+        @note http://en.cppreference.com/w/cpp/container/vector/operator_at
+        @param position the position of the element to return.
+        @return reference to the requested element.
      */
     reference operator[](size_type position) {
         return this->container[position];
     }
 
     /**
+        @brief Returns a reference to the element at specified location `position`. No bounds
+               checking is performed.
 
+        @note http://en.cppreference.com/w/cpp/container/vector/operator_at
+        @param position the position of the element to return.
+        @return reference to the requested element.
      */
     const_reference operator[](size_type position) const {
         return this->container[position];
     }
 
     /**
+        @brief Returns a reference to the first element in the container. Calling front on an empty
+               container is undefined.
 
+        @note http://en.cppreference.com/w/cpp/container/vector/front
+        @return reference to the first element.
      */
     reference front() {
         return this->container[0];
     }
 
     /**
+        @brief Returns a reference to the first element in the container. Calling front on an empty
+               container is undefined.
 
+        @note http://en.cppreference.com/w/cpp/container/vector/front
+        @return reference to the first element.
      */
     const_reference front() const {
         return this->container[0];
     }
 
     /**
+        @brief Returns reference to the last element in the container. Calling back on an empty
+               container is undefined.
 
+        @note http://en.cppreference.com/w/cpp/container/vector/back
+        @return reference to the last element.
      */
     reference back() {
         return this->container[element_count - 1];
     }
 
     /**
+        @brief Returns reference to the last element in the container. Calling back on an empty
+               container is undefined.
 
+        @note http://en.cppreference.com/w/cpp/container/vector/back
+        @return reference to the last element.
      */
     const_reference back() const {
         return this->container[element_count - 1];
